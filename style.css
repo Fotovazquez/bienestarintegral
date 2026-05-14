@@ -1,0 +1,125 @@
+/* Base Styles & Typography */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Wood Floor Texture Subtle Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3eeea;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b79583;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #76947d;
+}
+
+/* Fog / Mist Effect for Hero Image */
+.hero-mist-overlay {
+    background: linear-gradient(to right, #f3eeea 0%, rgba(243, 238, 234, 0.8) 20%, transparent 100%);
+}
+
+@media (max-width: 768px) {
+    .hero-mist-overlay {
+        background: linear-gradient(to bottom, #f3eeea 0%, rgba(243, 238, 234, 0.5) 30%, transparent 100%);
+    }
+}
+
+/* Animations */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-288px * 6 - 24px * 6)); }
+}
+
+.animate-scroll {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: max-content;
+}
+
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Transitions */
+.transition-all {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Service Card Hover */
+.service-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Button Subtle Glow */
+.btn-premium {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-premium:hover::after {
+    opacity: 1;
+}
+
+/* Pastel Borders */
+.border-pastel {
+    border-color: rgba(183, 149, 131, 0.15);
+}
+
+/* Custom rounded corners for a soft feel */
+.rounded-5xl {
+    border-radius: 3rem;
+}
+
+/* Glassmorphism subtle */
+.glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}

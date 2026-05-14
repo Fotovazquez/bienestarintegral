@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Integral | Centro de Bienestar en Mairena del Aljarafe</title>
+    <meta name="description" content="Centro de bienestar en el que puedes cuidar mente y cuerpo. Yoga, masajes, tratamientos faciales y corporales en Mairena del Aljarafe.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg-light': '#f3eeea',
+                        'brand-bg-dark': '#e0d6ce',
+                        'brand-brown': '#b79583',
+                        'brand-green': '#76947d',
+                        'brand-text': '#292929',
+                        'brand-pastel-green': '#d4dbd5',
+                        'brand-cream': '#f8f5f2',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                        '5xl': '2.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-bg-light text-brand-text font-sans selection:bg-brand-brown/30">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-brand-bg-light/80 backdrop-blur-md border-b border-brand-brown/10">
+        <div class="max-w-7xl mx-auto px-6 py-3 md:py-4 relative">
+            <!-- Mobile Header (Logo then Title) -->
+            <div class="flex flex-col items-center md:hidden mb-1">
+                <img src="img/logo.PNG" alt="Bienestar Integral Logo" class="h-12 w-auto mb-1">
+                <span class="font-serif text-lg tracking-[0.1em] text-brand-brown font-bold uppercase">Bienestar integral</span>
+            </div>
+            
+            <div class="flex justify-between items-center">
+                <!-- Desktop Logo & Title -->
+                <div class="hidden md:flex items-center gap-3">
+                    <img src="img/logo.PNG" alt="Bienestar Integral Logo" class="h-12 w-auto">
+                    <span class="font-serif text-xl tracking-wide">Bienestar Integral</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 ml-auto">
+                    <a href="#servicios" class="hover:text-brand-brown transition-colors">Servicios</a>
+                    <a href="#clases" class="hover:text-brand-brown transition-colors">Clases</a>
+                    <a href="#contacto" class="hover:text-brand-brown transition-colors">Contacto</a>
+                    <a href="https://booksy.com/es-es/171544_bienestar-integral_salon-de-unas_29895_mairena-del-aljarafe" 
+                       target="_blank"
+                       class="bg-brand-brown text-white px-6 py-2.5 rounded-full font-medium hover:bg-brand-brown/90 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                        Reservas
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-open" class="md:hidden text-brand-brown p-2 absolute right-4 top-1/2 -translate-y-1/2 z-10">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-brand-bg-light translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+        <div class="p-8 h-full flex flex-col">
+            <div class="flex justify-between items-center mb-10">
+                <img src="img/logo.PNG" alt="Logo" class="h-12 w-auto">
+                <button id="mobile-menu-close" class="text-brand-text p-2">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col gap-8 text-3xl font-serif text-center">
+                <a href="#servicios" class="mobile-nav-link hover:text-brand-brown">Servicios</a>
+                <a href="#clases" class="mobile-nav-link hover:text-brand-brown">Clases</a>
+                <a href="#contacto" class="mobile-nav-link hover:text-brand-brown">Contacto</a>
+            </div>
+
+            <!-- Minimalist Schedule Sticker -->
+            <div class="my-8 bg-brand-cream/50 border border-brand-brown/10 rounded-3xl p-6 shadow-inner mx-auto w-full max-w-[280px]">
+                <h5 class="text-[10px] font-bold tracking-widest text-brand-brown uppercase text-center mb-4 italic">Nuestro horario</h5>
+                <div class="space-y-2 text-[11px] text-brand-text/70">
+                    <div class="flex justify-between border-b border-brand-brown/5 pb-1">
+                        <span>L - Mi - Vi</span>
+                        <span class="font-bold">11:40 - 13:30</span>
+                    </div>
+                    <div class="flex justify-between border-b border-brand-brown/5 pb-1">
+                        <span>M - J (Mañanas)</span>
+                        <span class="font-bold">09:30 - 13:30</span>
+                    </div>
+                    <div class="flex justify-between border-b border-brand-brown/5 pb-1">
+                        <span>M - J (Tardes)</span>
+                        <span class="font-bold">16:30 - 20:30</span>
+                    </div>
+                    <div class="flex justify-between border-b border-brand-brown/5 pb-1">
+                        <span>Sábado</span>
+                        <span class="font-bold">10:00 - 14:00</span>
+                    </div>
+                    <div class="flex justify-between text-brand-brown/50 italic">
+                        <span>Domingo</span>
+                        <span>Cerrado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-auto space-y-8">
+                <a href="https://booksy.com/es-es/171544_bienestar-integral_salon-de-unas_29895_mairena-del-aljarafe" 
+                   target="_blank"
+                   class="block w-full text-center bg-brand-brown text-white py-5 rounded-3xl text-xl font-bold shadow-xl">
+                    Reservar Cita
+                </a>
+                
+                <div class="flex justify-center gap-8">
+                    <a href="https://www.instagram.com/bienestarintegralmairena" target="_blank" class="text-brand-brown text-2xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100076862281700" target="_blank" class="text-brand-brown text-2xl">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 items-center gap-12 z-10">
+            <!-- Hero Content -->
+            <div class="order-2 md:order-1 space-y-8 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 text-brand-green border border-brand-green/20">
+                    <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                    <span class="text-sm font-semibold tracking-wider uppercase">Centro Premium en Mairena</span>
+                </div>
+                
+                <div class="space-y-4">
+                    <img src="img/logo.PNG" alt="Logo" class="h-24 w-auto mb-6 mx-auto md:mx-0">
+                    <h1 class="text-5xl md:text-7xl font-serif leading-tight">
+                        Bienestar <br>
+                        <span class="text-brand-brown italic">Integral</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-brand-text/80 max-w-md font-light leading-relaxed mx-auto md:mx-0">
+                        Centro de bienestar en el que puedes cuidar mente y cuerpo. Un refugio de paz diseñado para tu equilibrio.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                    <a href="https://booksy.com/es-es/171544_bienestar-integral_salon-de-unas_29895_mairena-del-aljarafe" 
+                       target="_blank"
+                       class="group bg-brand-brown text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-brand-brown/90 transition-all hover:shadow-2xl flex items-center gap-3">
+                        Hacer una Reserva
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-6 pt-8 text-sm opacity-70">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="heart" class="w-4 h-4 text-brand-green"></i>
+                        <span>Amigable LGBTQ+</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="star" class="w-4 h-4 text-brand-green"></i>
+                        <span>Propietarias Mujeres</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Carousel -->
+            <div class="relative order-1 md:order-2 h-[500px] md:h-[700px] rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Fog Overlay -->
+                <div class="absolute inset-0 hero-mist-overlay z-10 pointer-events-none opacity-90"></div>
+                
+                <!-- Swiper-like Carousel -->
+                <div id="hero-carousel" class="h-full w-full relative">
+                    <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                        <img src="img/9.PNG" alt="Ambiente Bienestar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                        <img src="img/3.PNG" alt="Tratamiento" class="w-full h-full object-cover">
+                    </div>
+                    <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                        <img src="img/10.PNG" alt="Detalle Relax" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-brand-green/5 blur-3xl rounded-full -mb-20 -mr-20"></div>
+        <div class="absolute top-0 left-0 w-1/4 h-1/4 bg-brand-brown/5 blur-3xl rounded-full -mt-20 -ml-20"></div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="servicios" class="py-24 bg-brand-bg-dark/30 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-sm font-bold tracking-widest text-brand-green uppercase">Nuestros Servicios</h2>
+                <h3 class="text-4xl md:text-5xl font-serif">Cuidado integral para ti</h3>
+                <div class="w-24 h-1 bg-brand-brown/30 mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/1.PNG" alt="Yoga" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-brand-text/10 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                    <div class="flex justify-between items-start px-2">
+                        <h4 class="text-xl font-serif mb-2">Clases de Yoga</h4>
+                        <span class="text-brand-green font-bold text-[10px] tracking-widest uppercase bg-brand-green/10 px-2 py-0.5 rounded-full mt-1">Popular</span>
+                    </div>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Encuentra tu equilibrio y flexibilidad en un espacio de paz.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/relajantes.png" alt="Masajes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-xl font-serif px-2 mb-2">Masajes Relajantes</h4>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Libera tensiones con nuestras técnicas manuales especializadas.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/tratamientos2.PNG" alt="Facial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-xl font-serif px-2 mb-2">Cuidados Faciales</h4>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Tratamientos personalizados para devolver el brillo a tu piel.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/facial.PNG" alt="Corporal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-xl font-serif px-2 mb-2">Tratamientos Corporales</h4>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Cuida cada detalle de tu cuerpo con aparatología de vanguardia.</p>
+                </div>
+
+                <!-- Service Card 5 (Tratamientos) -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 lg:col-span-2">
+                    <div class="aspect-video md:aspect-[2/1] rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/tratamientos.PNG" alt="Maderoterapia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex justify-between items-end px-2">
+                        <div>
+                            <h4 class="text-2xl font-serif mb-2">Maderoterapia</h4>
+                            <p class="text-brand-text/60 leading-relaxed">Técnica natural para moldear y reafirmar.</p>
+                        </div>
+                        <span class="text-brand-green font-bold text-sm tracking-widest uppercase">Novedad</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 (Tratamientos 2) -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/preso.png" alt="Presoterapia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-xl font-serif px-2 mb-2">Presoterapia</h4>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Mejora tu circulación y bienestar linfático.</p>
+                </div>
+
+                <!-- Service Card 7 (Tratamientos 3) -->
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/tratamientos3.PNG" alt="Estetica" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-xl font-serif px-2 mb-2">Estética Integral</h4>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Soluciones estéticas completas en un solo lugar.</p>
+                </div>
+
+                <!-- Service Card 8 (5.png) 
+                <div class="group bg-brand-cream p-4 rounded-4xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="aspect-square rounded-3xl overflow-hidden mb-6 relative">
+                        <img src="img/5.png" alt="Bienestar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-xl font-serif px-2 mb-2">Cuidado Facial</h4>
+                    <p class="text-sm text-brand-text/60 px-2 leading-relaxed">Tratamientos rejuvenecedores y limpieza profunda.</p>
+                </div>
+            </div>-->
+        </div>
+    </section>
+
+    <!-- Social Proof / Instagram Section -->
+    <section id="clases" class="py-24 overflow-hidden bg-brand-bg-light">
+        <div class="container mx-auto px-6 mb-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <h2 class="text-sm font-bold tracking-widest text-brand-green uppercase">Comunidad</h2>
+                    <h3 class="text-4xl font-serif">Síguenos en Instagram</h3>
+                    <p class="text-brand-text/60">@bienestarintegralmairena</p>
+                </div>
+                <a href="https://www.instagram.com/bienestarintegralmairena" target="_blank" class="inline-flex items-center gap-2 text-brand-brown font-semibold hover:underline decoration-brand-brown/30 underline-offset-8 transition-all">
+                    Ver perfil completo <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Instagram Feed Carousel -->
+        <div class="relative group mt-8">
+            <div class="flex overflow-hidden">
+                <div class="animate-scroll flex gap-6">
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases1.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases2.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases3.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases4.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases5.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases6.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Duplicated set for seamless loop -->
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases1.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases2.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases3.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases4.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases5.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-none w-72 h-96 rounded-3xl overflow-hidden shadow-lg">
+                        <img src="img/clases6.jpg" alt="Clase de Yoga" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        <!-- Google Reviews Section -->
+        <div class="container mx-auto px-6 mt-24">
+            <div class="text-center mb-12">
+                <div class="flex justify-center items-center gap-2 mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="font-bold text-lg">4.9 / 5</span>
+                </div>
+                <h3 class="text-3xl font-serif">Lo que dicen nuestras clientas</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-4xl shadow-sm border border-brand-brown/5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green font-bold text-xl">A</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-brand-text">Ana Estévez Sánchez</h4>
+                                <p class="text-xs text-brand-text/50">Hace 2 meses</p>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed text-brand-text/80 italic">"En barre piensas voy a morir !! y sales con un subidón de ganar el cuerpo a la mente fantástico"</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-brand-brown/5">
+                        <p class="text-[11px] text-brand-brown font-medium">Respuesta de la propietaria:</p>
+                        <p class="text-[11px] text-brand-text/60 mt-1">"¡Muchas gracias por tus palabras Ana ! Y por confiar en mí tantos años🤍🙏🏻..."</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-4xl shadow-sm border border-brand-brown/5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-brown/20 flex items-center justify-center text-brand-brown font-bold text-xl">E</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-brand-text">Eva</h4>
+                                <p class="text-xs text-brand-text/50">Hace 2 meses</p>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed text-brand-text/80 italic">"Todo un descubrimiento!!!! Maravilloso"</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-brand-brown/5">
+                        <p class="text-[11px] text-brand-brown font-medium">Respuesta de la propietaria:</p>
+                        <p class="text-[11px] text-brand-text/60 mt-1">"Gracias Eva!!!!!!!🤍🤍🤍..."</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-4xl shadow-sm border border-brand-brown/5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green font-bold text-xl">A</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-brand-text">Ana Maria Gamiz Contreras</h4>
+                                <p class="text-xs text-brand-text/50">Hace 2 meses</p>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed text-brand-text/80 italic">"Mónica es una buenísima profesional de la estética,y mejor persona,se preocupa con todo lo que hace y te informa sobre todo el procedimiento."</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-brand-brown/5">
+                        <p class="text-[11px] text-brand-brown font-medium">Respuesta de la propietaria:</p>
+                        <p class="text-[11px] text-brand-text/60 mt-1">"Muchas gracias Ana por tu confianza , siempre un placer atenderte🧡🧡🧡🧡..."</p>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-white p-8 rounded-4xl shadow-sm border border-brand-brown/5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-brown/20 flex items-center justify-center text-brand-brown font-bold text-xl">N</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-brand-text">Nuria Liñán Almirón</h4>
+                                <p class="text-xs text-brand-text/50">Hace 2 meses</p>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed text-brand-text/80 italic">"Teniendo en cuenta que Mónica es la persona en el mundo que más lento cuenta hasta 8 , tengo que decir que mi experiencia con el barre es mortífera pero muy satisfactoria."</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-brand-brown/5">
+                        <p class="text-[11px] text-brand-brown font-medium">Respuesta de la propietaria:</p>
+                        <p class="text-[11px] text-brand-text/60 mt-1">"Muchísimas gracias Nuria!!!!!!gracias por confiar en nosotras🤍🤍🤍..."</p>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-white p-8 rounded-4xl shadow-sm border border-brand-brown/5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green font-bold text-xl">M</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-brand-text">Marta Carranza Silgado</h4>
+                                <p class="text-xs text-brand-text/50">Hace 2 meses</p>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed text-brand-text/80 italic">"La sensación de las clases de barre es una experiencia increíble. Desde el primer día noté que es un entrenamiento muy completo: combina fuerza, resistencia y trabajo de postura."</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-brand-brown/5">
+                        <p class="text-[11px] text-brand-brown font-medium">Respuesta de la propietaria:</p>
+                        <p class="text-[11px] text-brand-text/60 mt-1">"Muchísimas gracias Marta por tus palabras y por confiar en mí🤍🤍🤍..."</p>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="bg-white p-8 rounded-4xl shadow-sm border border-brand-brown/5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-brand-brown/20 flex items-center justify-center text-brand-brown font-bold text-xl">M</div>
+                            <div>
+                                <h4 class="font-bold text-sm text-brand-text">María</h4>
+                                <p class="text-xs text-brand-text/50">Hace 5 meses</p>
+                            </div>
+                        </div>
+                        <p class="text-sm leading-relaxed text-brand-text/80 italic">"Perfecto. He cogido una promoción de black friday y ha sido maravillosa la experiencia el trato de Monica magnífico y el tratamiento una pasada. Volveré muchas veces más!"</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-brand-brown/5">
+                        <p class="text-[11px] text-brand-brown font-medium">Respuesta de la propietaria:</p>
+                        <p class="text-[11px] text-brand-text/60 mt-1">"¡Muchas gracias María!!!! Gracias por tus palabras🤗🤍..."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="https://www.google.com/maps/place/BIENESTAR+INTEGRAL+MAIRENA/@37.3538282,-6.0625102,20z/data=!4m18!1m9!3m8!1s0xd126dcd369b01c3:0x23d070f82c46f2fd!2sBIENESTAR+INTEGRAL+MAIRENA!8m2!3d37.3538324!4d-6.0622381!9m1!1b1!16s%2Fg%2F11fb04jnwh!3m7!1s0xd126dcd369b01c3:0x23d070f82c46f2fd!8m2!3d37.3538324!4d-6.0622381!9m1!1b1!16s%2Fg%2F11fb04jnwh?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank"
+                   class="inline-flex items-center gap-2 text-brand-brown font-bold hover:text-brand-green transition-colors py-2 px-6 border-2 border-brand-brown/10 rounded-full hover:border-brand-green/30">
+                    Ver más reseñas en Google
+                    <i class="fa-brands fa-google text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Info Section -->
+    <section id="contacto" class="py-24 bg-brand-bg-dark/40 relative border-t border-brand-brown/5">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Info Column -->
+                <div class="space-y-12">
+                    <div class="space-y-6">
+                        <h3 class="text-4xl font-serif">Ven a visitarnos</h3>
+                        <p class="text-brand-text/70 leading-relaxed max-w-md">
+                            Estamos ubicados en el corazón de Mairena del Aljarafe, en un entorno tranquilo diseñado para tu relajación.
+                        </p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h4 class="font-bold flex items-center gap-2 text-brand-green">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i> Ubicación
+                            </h4>
+                            <p class="text-sm leading-relaxed">
+                                <a href="https://www.google.com/maps/place/BIENESTAR+INTEGRAL+MAIRENA/@37.3538282,-6.0625102,20.77z/data=!4m6!3m5!1s0xd126dcd369b01c3:0x23d070f82c46f2fd!8m2!3d37.3538324!4d-6.0622381!16s%2Fg%2F11fb04jnwh?entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D" 
+                                   target="_blank" 
+                                   class="hover:text-brand-brown transition-colors">
+                                    Calle Industria, 5<br>
+                                    Mairena del Aljarafe, Spain<br>
+                                    41927
+                                </a>
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="font-bold flex items-center gap-2 text-brand-green">
+                                <i data-lucide="phone" class="w-5 h-5"></i> Contacto
+                            </h4>
+                            <p class="text-sm leading-relaxed">
+                                <a href="tel:+34645572877" class="hover:text-brand-brown transition-colors">+34 645 57 28 77</a><br>
+                                <a href="mailto:monikasr2008@hotmail.com" class="hover:text-brand-brown transition-colors">monikasr2008@hotmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                        <a href="https://www.instagram.com/bienestarintegralmairena" target="_blank" 
+                           class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border border-brand-brown/20 hover:bg-brand-brown hover:text-white hover:border-brand-brown transition-all duration-300 group">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                            <span class="font-medium text-sm">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100076862281700" target="_blank"
+                           class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border border-brand-brown/20 hover:bg-brand-brown hover:text-white hover:border-brand-brown transition-all duration-300 group">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                            <span class="font-medium text-sm">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Schedule Column -->
+                <div class="bg-white/50 backdrop-blur-sm p-8 md:p-12 rounded-5xl shadow-xl border border-white/40">
+                    <h4 class="text-2xl font-serif mb-8 text-center">Horario de Apertura</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-2 border-b border-brand-brown/10">
+                            <span class="font-medium">Lunes</span>
+                            <span class="text-sm opacity-80">11:40 - 13:30</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-brand-brown/10">
+                            <span class="font-medium">Martes</span>
+                            <div class="text-right flex flex-col items-end">
+                                <span class="text-sm opacity-80">09:30 - 13:30</span>
+                                <span class="text-sm opacity-80">16:30 - 19:30</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-brand-brown/10">
+                            <span class="font-medium">Miércoles</span>
+                            <span class="text-sm opacity-80">11:40 - 13:30</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-brand-brown/10">
+                            <span class="font-medium">Jueves</span>
+                            <div class="text-right flex flex-col items-end">
+                                <span class="text-sm opacity-80">09:30 - 13:30</span>
+                                <span class="text-sm opacity-80">16:30 - 20:30</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-brand-brown/10">
+                            <span class="font-medium">Viernes</span>
+                            <span class="text-sm opacity-80">09:30 - 13:30</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-brand-brown/10">
+                            <span class="font-medium">Sábado</span>
+                            <span class="text-sm opacity-80">10:00 - 14:00</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="font-medium">Domingo</span>
+                            <span class="text-sm font-bold text-brand-brown uppercase">Cerrado</span>
+                        </div>
+                    </div>
+
+                    <a href="https://booksy.com/es-es/171544_bienestar-integral_salon-de-unas_29895_mairena-del-aljarafe" 
+                       target="_blank"
+                       class="mt-12 w-full flex justify-center items-center py-4 rounded-3xl bg-brand-brown text-white font-bold hover:shadow-2xl hover:bg-brand-brown/90 transition-all">
+                        Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-brand-bg-light">
+        <div class="container mx-auto px-6 text-center space-y-8">
+            <img src="img/logo.PNG" alt="Logo" class="h-12 w-auto mx-auto grayscale opacity-50">
+            <p class="text-sm text-brand-text/40">
+                &copy; 2026 Bienestar Integral Mairena. Todos los derechos reservados.
+            </p>
+            
+            <button id="back-to-top" class="p-4 rounded-full bg-brand-bg-dark border border-brand-brown/20 text-brand-brown hover:bg-brand-brown hover:text-white transition-all duration-300">
+                <i data-lucide="chevron-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/34645572877" target="_blank" 
+       class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-black px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            ¿Hablamos por WhatsApp?
+        </span>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Hero Carousel Logic
+        const slides = document.querySelectorAll('#hero-carousel .carousel-item');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('opacity-100');
+            slides[currentSlide].classList.add('opacity-0');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.remove('opacity-0');
+            slides[currentSlide].classList.add('opacity-100');
+        }
+
+        // Show first slide
+        if(slides.length > 0) {
+            slides[0].classList.add('opacity-100');
+            setInterval(nextSlide, 5000);
+        }
+
+        // Back to top logic
+        const backToTop = document.getElementById('back-to-top');
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        openBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>
